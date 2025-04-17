@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五子棋游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-container"></div>
+    
+    <div id="game-container">
+        <div id="menu">
+            <h1>五子棋</h1>
+            <div class="menu-buttons">
+                <button id="standard-mode">开始游戏</button>
+                <button id="settings">设置</button>
+            </div>
+        </div>
+
+        <div id="game-board" class="hidden">
+            <div class="game-header">
+                <button id="back-to-menu">返回菜单</button>
+                <div id="game-info">
+                    <span id="player-turn">轮到: 黑子</span>
+                    <span id="difficulty-display" class="hidden">难度: 1</span>
+                </div>
+                <button id="restart">重新开始</button>
+            </div>
+            
+            <div class="timer-container">
+                <div id="black-timer" class="timer active">黑子: 30s</div>
+                <div id="white-timer" class="timer">白子: 30s</div>
+            </div>
+            
+            <div class="board-container">
+                <canvas id="board"></canvas>
+            </div>
+            
+            <div class="game-controls">
+                <button id="undo" disabled>悔棋</button>
+            </div>
+        </div>
+        
+        <div id="difficulty-select" class="hidden">
+            <h2>选择难度</h2>
+            <div class="difficulty-buttons">
+                <button data-difficulty="1">入门</button>
+                <button data-difficulty="2">初级</button>
+                <button data-difficulty="3">中级</button>
+                <button data-difficulty="4">高级</button>
+                <button data-difficulty="5">专家</button>
+            </div>
+            <button id="back-from-difficulty">返回</button>
+        </div>
+
+        <div id="settings-panel" class="hidden">
+            <h2>游戏设置</h2>
+            <div class="settings-options">
+                <div class="setting-item">
+                    <label for="bg-music-toggle">背景音乐</label>
+                    <label class="switch">
+                        <input type="checkbox" id="bg-music-toggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <button id="back-from-settings">返回</button>
+        </div>
+    </div>
+
+    <script src="js/board.js"></script>
+    <script src="js/sound-manager.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
